@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebAcesCallingApp", ".", "{85600292-7B94-486F-9D3C-717788AA4713}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/WebAcesCallingApp"
+		Debug.AspNetCompiler.PhysicalPath = "..\WebAcesCallingApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebAcesCallingApp\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebAcesCallingApp"
+		Release.AspNetCompiler.PhysicalPath = "..\WebAcesCallingApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebAcesCallingApp\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57237"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85600292-7B94-486F-9D3C-717788AA4713}.Debug|.NET.ActiveCfg = Debug|.NET
+		{85600292-7B94-486F-9D3C-717788AA4713}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
