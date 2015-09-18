@@ -8,7 +8,7 @@ Partial Class _Default
         Dim RequestAction As Enums.RequestActionEnum
         Dim ResponseAction As Enums.ResponseActionEnum
         Dim VersionNumber As String
-        Dim Message As String
+        Dim Message As String = Nothing
 
         Try
 
@@ -42,6 +42,8 @@ Partial Class _Default
         Dim IPAddress As String
         Dim Sql As String
         Dim dt As DataTable
+        Dim TrackAdmin As String
+        Dim Done As Boolean
 
         Try
 
@@ -49,8 +51,31 @@ Partial Class _Default
                 Exit Sub
             End If
 
+            TrackAdmin = ConfigurationManager.AppSettings("TrackAdmin")
+            If TrackAdmin.Length > 0 Then
+                Select Case TrackAdmin
+                    Case "32-1c28"
+                        cEnviro.Platform = "DEV"
+                        Done = True
+                    Case "*492_cn4r"
+                        cEnviro.Platform = "TEST"
+                        Done = True
+                End Select
+            End If
+
+            If Not Done Then
+                Select Case System.Net.Dns.GetHostName().ToUpper
+                    Case "WADEV"
+                        cEnviro.Platform = "DEV"
+                    Case "WATEST"
+                        cEnviro.Platform = "TEST"
+                    Case "WAPROD"
+                        cEnviro.Platform = "PROD"
+                End Select
+            End If
+
             ' ___ web.config
-            cEnviro.Platform = ConfigurationManager.AppSettings("Platform").ToUpper
+            'cEnviro.Platform = ConfigurationManager.AppSettings("Platform").ToUpper
             cEnviro.UserCatgy = ConfigurationManager.AppSettings("UserCatgy").ToUpper
             If Common.IsNotBlank(ConfigurationManager.AppSettings("OverrideClientID")) Then
                 cEnviro.ClientID = ConfigurationManager.AppSettings("OverrideClientID").ToUpper
@@ -192,7 +217,7 @@ Partial Class _Default
                             Result = True
                             cEnviro.EnrollerID = UserID
                         Else
-                            Message = "Insufficient permission.s"
+                            Message = "Insufficient permissions."
                         End If
                     End If
 
@@ -259,7 +284,7 @@ Partial Class _Default
                 Coll.Assign("EnrollerID", cEnviro.EnrollerID)
             End If
             Coll.Assign("Version", cEnviro.VersionNumber)
-            Coll.Assign("BuildNum", cEnviro.BuildNum)
+            Coll.Assign("CallingAppBuildNum", cEnviro.CallingAppBuildNum)
 
             If cEnviro.Platform <> Enums.Platform.PROD Then
                 If Common.IsNotBlank(Common.GetActualUserName) Then

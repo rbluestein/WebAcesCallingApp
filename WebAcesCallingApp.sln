@@ -18,7 +18,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebAcesCallingApp", ".", "{
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "57237"
+		VWDPort = "51498"
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject

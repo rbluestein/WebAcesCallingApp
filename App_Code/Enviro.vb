@@ -5,9 +5,7 @@ Public Class Enviro
     Private cPlatform As String
     Private cUserCatgy As String
     Private cClientID As String
-    'Private cOverrideDBHost As String
     Private cOverrideWebAcesDB As String
-
     Private cInit As Boolean
     Private cSessionID As Integer
     Private cEnrollerID As String
@@ -102,13 +100,6 @@ Public Class Enviro
     '    End Set
     'End Property
 
-    Public ReadOnly Property BuildNum As String
-        Get
-            Dim Build As String
-            Build = "108473" ' 08/13/2015
-            Return Build
-        End Get
-    End Property
 
     Public ReadOnly Property VersionNumber() As String
         Get
@@ -128,6 +119,15 @@ Public Class Enviro
             Return Version
         End Get
     End Property
+
+    Public ReadOnly Property CallingAppBuildNum As String
+        Get
+            Dim BuildNum As String
+            BuildNum = "108473" ' 08/13/2015
+            Return BuildNum
+        End Get
+    End Property
+
 
     Public Property Init() As Boolean
         Get
