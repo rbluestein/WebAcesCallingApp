@@ -149,7 +149,7 @@ Public Class ErrorHandler
             sb.Append(Common.StrOutHandler(cEnviro.ClientDB, True, Enums.StringTreatEnum.SideQts) & ", ")
             sb.Append("'" & cEnviro.Platform & "', ")
             sb.Append("'CA_" & cEnviro.UserCatgy & "', ")
-            sb.Append("'" & cEnviro.VersionNumber & "', ")
+            sb.Append("'" & cEnviro.VersionNum & "', ")
             sb.Append(Common.StrOutHandler(ErrorMessage, True, Enums.StringTreatEnum.SideQts_SecApost) & ", ")
             sb.Append(Common.StrOutHandler(FullServerDateTime, False, Enums.StringTreatEnum.SideQts) & ")")
 

@@ -101,7 +101,7 @@ Public Class Enviro
     'End Property
 
 
-    Public ReadOnly Property VersionNumber() As String
+    Public ReadOnly Property VersionNum() As String
         Get
             Dim Version As String
             'Version = "0.02.31"  ' 11/06/2013: Provided for different userids and passwords across servers; set up version number; added OverrideDBHost to web.config
@@ -114,8 +114,9 @@ Public Class Enviro
             'Version = "0.02.38"  ' 01/09/2014: Added code to account for hbg-tst database names. 
             'Version = "0.02.39"  ' 01/09/2014:  Added Enviro.ClientDB. Switched from web.config to ClientMaster table for clientdb. 
             'Version = "0.02.40"  ' 02/25/2014: Set up WAClientID to enable aliases on same database. 
-            'Version = "0.02.41"   ' 03/31/2014: No change. Precaution for publish to watest.
-            Version = "0.02.42"    ' 03/23/2015: Get actual user name for dev and test."
+            'Version = "0.02.41"  ' 03/31/2014: No change. Precaution for publish to watest.
+            'Version = "0.02.42"  ' 09/17/2015: Get actual user name for dev and test."
+            Version = "0.02.43"   ' 09/18/2015: Auto detect environment with override."
             Return Version
         End Get
     End Property
